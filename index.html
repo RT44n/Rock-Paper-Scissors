@@ -9,22 +9,57 @@
 </head>
 <body>
     <script>
-        let computerSelection = getComputerChoice();
+
+       
+        const playerselection = prompt("Whats your choice?"); 
+        const computerSelection = getComputerChoice();
+
+
+        function playRound(playerselection, computerSelection){
+
+            if (playerselection == computerSelection){
+                return "Its a tie!";
+            }
+            if (playerselection == "rock" && computerSelection == "paper"){
+                return "You have lost!";
+            }
+            if (playerselection == "rock" && computerSelection == "scissors"){
+                return "You have won!";
+            }
+            if (playerselection == "paper" && computerSelection == "rock"){
+                return "You have won!";
+            }   
+            if (playerselection == "paper" && computerSelection == "scissors"){
+                return "You have lost!";
+            }
+            if (playerselection == "scissors" && computerSelection == "paper"){
+                return "You have won!";
+            }
+            if (playerselection == "scissors" && computerSelection == "rock"){
+                return "You have lost!";
+            } 
+        }
+        
+        
+
+        
         console.log(computerSelection);
         function getComputerChoice()
             {
                 let computerChoice = Math.floor(Math.random() * 3);
                
                     if (computerChoice == 0){
-                        return "Rock";
+                        return "rock";
                     }
                     if  (computerChoice == 1 ){
-                        return "Paper";
+                        return "paper";
                     }
                     if (computerChoice == 2){
-                        return "Scissors";
+                        return "scissors";
                     }
             }
+
+        alert(playRound(playerselection, computerSelection));
                
          </script>
     
